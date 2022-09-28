@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Navbar from "./navbar";
+import Content from "./content";
 
 export default function Home() {
   return (
@@ -12,14 +14,8 @@ export default function Home() {
           rel="stylesheet"
         />
       </head>
-      <nav
-        className="flex flex-col lg:flex-row justify-center font-bold pb-16 :text-4xl justify-around p-20"
-        id="navigation"
-      >
-        <a href="#">Unsere Vision</a>
-        <a href="#">Unser Team</a>
-        <a href="#">Kontakt</a>
-      </nav>
+      <Navbar />
+      <Content title="Hello World" />
       <div className="p-20 bg-grey-500">
         <h1 className="font-bold text-2xl">Unsere Vision</h1>
         <p>
