@@ -3,12 +3,12 @@ import Head from "next/head";
 export default function Navbar() {
   return (
     <nav
-      className="flex flex-col lg:flex-row justify-center font-bold pb-16 :text-4xl justify-around p-20"
+      className="font-mono bg-gray-200 flex flex-col lg:flex-row pb-16 justify-around p-5 outline-neutral-100 "
       id="navigation"
     >
-      <a href="#">Unsere Vision</a>
-      <a href="#">Unser Team</a>
-      <a href="#">Kontakt</a>
+      <a href="#">UNSERE VISION</a>
+      <a href="#">UNSER TEAM</a>
+      <a href="#">KONTAKT</a>
     </nav>
   );
 }
