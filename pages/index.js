@@ -3,17 +3,21 @@ import Navbar from "./navbar";
 import Content from "./content";
 import Profile from "./profile";
 import React from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  useEffect(() => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
       });
     });
   });
+
   const namen = ["Marc", "Michelle", "Jonas", "Felicia", "Lukas", "Jingwen"];
   const beschreibung = {
     Marc: "Ich bin 20 Jahre alt und bin im 5.Semester.",
