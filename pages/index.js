@@ -1,26 +1,31 @@
 import Head from "next/head";
 import Navbar from "./navbar";
 import Content from "./content";
+import Profile from "./profile";
 import React from "react";
 
 export default function Home() {
-  const namen = ["Marc", "Michelle", "Jonas", "Felicia", "Lukas"];
+  const namen = ["Marc", "Michelle", "Jonas", "Felicia", "Lukas", "Jingwen"];
   const beschreibung = {
-    Marc: "Hey",
-    Michelle: "Hallo",
-    Jonas: "Teststs",
-    Felicia: "Spanien",
-    Lukas: "looool",
+    Marc: "Ich bin 20 Jahre alt und bin im 5.Semester.",
+    Michelle: "Hallo, ich komm nicht rein",
+    Jonas:
+      "Ich bin 22 Jahre alt und im 5. Semester. Ich freu mich auf Ihr Projekt!",
+    Felicia: "Ich bin in Spanien und im 5. Semester",
+    Lukas:
+      "Ich bin 22 Jahre alt und zur Zeit im 7. Semester. Ich bin gespannt auf neue Herausforderungen!",
+    Jingwen: "Ich bin 23 Jahre alt und bin im 7. Semester",
   };
   const picture_src = {
-    Marc: "Hey",
-    Michelle: "Hallo",
-    Jonas: "Teststs",
-    Felicia: "Spanien",
-    Lukas: "looool",
+    Marc: "emoji1.jpeg",
+    Michelle: "emoji2.jpeg",
+    Jonas: "emoji3.jpeg",
+    Felicia: "emoji4.jpeg",
+    Lukas: "emoji5.jpeg",
+    Jingwen: "emoji6.jpeg",
   };
   return (
-    <div className="container">
+    <div className="">
       <head>
         <title>.onPoint</title>
         <meta charset="utf-8" />
@@ -29,31 +34,39 @@ export default function Home() {
           rel="stylesheet"
         />
       </head>
-      <Navbar />
-      <Content title="Unsere Vision">
-        <p>
-          Wir entwickeln als Team Softwareprodukte, sodass Sie mit der besten
-          und aktuellsten Software ausgestattet werden. Unsere Entwicklung
-          arbeitet zielstrebig auf Exzellenz ihrer Wünsche hin und wird Ihnen
-          eine einfache und trotzdem zuverlässige Lösung bieten. Hier wird die
-          Software Ihrer Vorstellung Realität.
-        </p>
-      </Content>
-      <Content title="Unser Team">
-        {namen.map((name) => {
-          return (
-            <Profile name={name} picture_src={picture_src[name]}>
-              {beschreibung[name]}
-            </Profile>
-          );
-        })}
-      </Content>
-      <Content title="Kontakt">
-        <p>
-          Wir bei onPoint sind immer und überall und auch an Weihnachten
-          erreichbar! Wir kennen keine Freizeit!
-        </p>
-      </Content>
+      <body>
+        <div className="fixed">
+          <Navbar />
+        </div>
+        <div className="font-mono md:pl-20 md:pr-20 pt-56 grid grid-cols-1 gap-10 p-5">
+          <Content title="Unsere Vision">
+            <p>
+              Wir entwickeln als Team Softwareprodukte, sodass Sie mit der
+              besten und aktuellsten Software ausgestattet werden. Unsere
+              Entwicklung arbeitet zielstrebig auf Exzellenz ihrer Wünsche hin
+              und wird Ihnen eine einfache und trotzdem zuverlässige Lösung
+              bieten. Hier wird die Software Ihrer Vorstellung Realität.
+            </p>
+          </Content>
+          <Content title="Unser Team">
+            <div className="grid justify-self-stretch xl:grid-flow-row 3xl:grid-cols-6 xl:grid-cols-2 2xl:grid-cols-3 gap-4 ">
+              {namen.map((name) => {
+                return (
+                  <Profile name={name} picture_src={picture_src[name]}>
+                    {beschreibung[name]}
+                  </Profile>
+                );
+              })}
+            </div>
+          </Content>
+          <Content title="Kontakt">
+            <p>
+              Wir bei onPoint sind immer und überall und auch an Weihnachten
+              erreichbar! Wir kennen keine Freizeit!
+            </p>
+          </Content>
+        </div>
+      </body>
     </div>
   );
 }
