@@ -5,10 +5,19 @@ import Profile from "./profile";
 import React from "react";
 
 export default function Home() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
   const namen = ["Marc", "Michelle", "Jonas", "Felicia", "Lukas", "Jingwen"];
   const beschreibung = {
     Marc: "Ich bin 20 Jahre alt und bin im 5.Semester.",
-    Michelle: "Hallo, ich komm nicht rein",
+    Michelle: "Ich bin 23 Jahre alt und im 7. Semester.",
     Jonas:
       "Ich bin 22 Jahre alt und im 5. Semester. Ich freu mich auf Ihr Projekt!",
     Felicia: "Ich bin in Spanien und im 5. Semester",
@@ -25,7 +34,7 @@ export default function Home() {
     Jingwen: "emoji6.jpeg",
   };
   return (
-    <div className="">
+    <div>
       <head>
         <title>.onPoint</title>
         <meta charset="utf-8" />
@@ -35,10 +44,13 @@ export default function Home() {
         />
       </head>
       <body>
-        <div className="fixed">
+        <div id="start" className="fixed">
           <Navbar />
         </div>
-        <div className="font-mono md:pl-20 md:pr-20 pt-56 grid grid-cols-1 gap-10 p-5">
+        <div
+          id="vision"
+          className="font-mono md:pl-20 md:pr-20 pt-56 grid grid-cols-1 gap-10 p-5"
+        >
           <Content title="Unsere Vision">
             <p>
               Wir entwickeln als Team Softwareprodukte, sodass Sie mit der
@@ -60,7 +72,7 @@ export default function Home() {
             </div>
           </Content>
           <Content title="Kontakt">
-            <p>
+            <p id="contact">
               Wir bei onPoint sind immer und überall und auch an Weihnachten
               erreichbar! Wir kennen keine Freizeit!
             </p>

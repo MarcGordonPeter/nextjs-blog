@@ -7,7 +7,7 @@ export default function Profile({
   children: text,
 }) {
   return (
-    <div className="p-10 bg-gray-100 border rounded-3xl flex justify-center">
+    <div className="md:p-10  bg-gray-100 border rounded-3xl flex justify-center">
       <div className="flex flex-col text-center justify-start">
         <div className="flex flex-row justify-center">
           <img className="" src={picture_src} alt={name} />
