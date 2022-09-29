@@ -37,6 +37,14 @@ export default function Home() {
     Lukas: "emoji5.jpeg",
     Jingwen: "emoji6.jpeg",
   };
+  const emails = {
+    Marc: "marcpeter.dus@web.de",
+    Michelle: "mbinder1@smail.uni-koeln.de",
+    Jonas: "jonas.wetzel23@gmail.com",
+    Felicia: "feliciasMail@mail.de",
+    Lukas: "lschrays@smail.uni-koeln.de",
+    Jingwen: "yijingwenid@163.com",
+  };
   return (
     <div>
       <Head>
@@ -68,7 +76,11 @@ export default function Home() {
             <div className="grid justify-self-stretch xl:grid-flow-row 3xl:grid-cols-6 xl:grid-cols-2 2xl:grid-cols-3 gap-4 ">
               {namen.map((name) => {
                 return (
-                  <Profile name={name} picture_src={picture_src[name]}>
+                  <Profile
+                    name={name}
+                    picture_src={picture_src[name]}
+                    email={emails[name]}
+                  >
                     {beschreibung[name]}
                   </Profile>
                 );
@@ -76,10 +88,7 @@ export default function Home() {
             </div>
           </Content>
           <Content title="Kontakt">
-            <p id="contact">
-              Wir bei onPoint sind immer und überall und auch an Weihnachten
-              erreichbar! Wir kennen keine Freizeit!
-            </p>
+            <p id="contact"></p>
           </Content>
         </div>
       </div>
