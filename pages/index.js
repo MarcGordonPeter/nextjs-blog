@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Navbar from "./navbar";
-import Content from "./content";
-import Profile from "./profile";
+import Navbar from "../components/navbar";
+import Content from "../components/content";
+import Profile from "../components/profile";
 import React from "react";
 import { useEffect } from "react";
 
