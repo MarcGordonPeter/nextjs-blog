@@ -1,14 +1,25 @@
 // @ts-check
 const { test, expect } = require("@playwright/test");
-
-test("homepage has Playwright in title and get started link linking to the intro page", async ({
-  page,
-}) => {
+test("content ", async ({ page }) => {
   await page.goto("http://localhost:3000");
+  const contact = page.locator("data-testid=Kontakt");
+  const vision = page.locator("data-testid=Unsere Vision");
+  const team = page.locator("data-testid=Unser Team");
+  const navbar = page.locator("data-testid=navbar");
 
-  // Expect a title "to contain" a substring.
+  await expect(contact).toContainText("Kontakt");
+  await expect(vision).toContainText("Unsere Vision");
+  await expect(team).toContainText("Unser Team");
+  await expect(navbar).toContainText("KONTAKT");
+  await expect(navbar).toContainText("UNSERE VISION");
+  await expect(navbar).toContainText("UNSER TEAM");
 
-  // create a locator
-  const getStarted = page.locator("data-testid=Kontakt");
-  await expect(getStarted).toContainText("Kontakt");
+  const namen = ["Marc", "Michelle", "Jonas", "Felicia", "Lukas", "Jingwen"];
+  var arrayLength = namen.length;
+  for (var i = 0; i < arrayLength; i++) {
+    await expect(team).toContainText(namen[i]);
+  }
+  await navbar.locator("text=Kontakt").click();
+  await navbar.locator("text=Unser Team").click();
+  await navbar.locator("text=Unsere Vision").click();
 });

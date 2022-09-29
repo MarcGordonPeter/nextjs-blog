@@ -3,6 +3,7 @@ import Head from "next/head";
 export default function Navbar() {
   return (
     <nav
+      data-testid="navbar"
       className="font-mono text-2xl bg-gray-300 py-4 md:py-16 w-screen flex md:flex-row flex-col text-center justify-around"
       id="navigation"
     >
