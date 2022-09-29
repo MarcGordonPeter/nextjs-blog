@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Navbar from "./navbar";
-import Content from "./content";
-import Profile from "./profile";
+import Navbar from "../components/navbar";
+import Content from "../components/content";
+import Profile from "../components/profile";
 import React from "react";
 import { useEffect } from "react";
 
@@ -39,15 +39,15 @@ export default function Home() {
   };
   return (
     <div>
-      <head>
+      <Head>
         <title>.onPoint</title>
         <meta charset="utf-8" />
         <link
           href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
           rel="stylesheet"
         />
-      </head>
-      <body>
+      </Head>
+      <div>
         <div id="start" className="fixed">
           <Navbar />
         </div>
@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </Content>
         </div>
-      </body>
+      </div>
     </div>
   );
 }
